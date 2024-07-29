@@ -63,4 +63,3 @@ Get ready to add a touch of magic to your websites! In this module, we'll learn 
     *   Students choose a final project that incorporates multiple JavaScript concepts they've learned.
     *   Encourage creativity and let students showcase their individual skills.
 
-Let me know if you'd like any modifications to this plan!
