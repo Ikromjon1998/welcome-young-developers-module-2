@@ -2,7 +2,7 @@
 
 Get ready to add a touch of magic to your websites! In this module, we'll learn JavaScript, the coding language that makes websites interactive and fun, and use GitHub Pages to publish them.
 
-### ✨ Session Breakdown:
+### ✨ Sessions Breakdown:
 
 1. **JavaScript Events: Make Your Website Respond!**
     * Learn how to make your website react to clicks, hovers, and other actions.
