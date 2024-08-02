@@ -1,3 +1,13 @@
+# Web Development for Young Coders
+
+Welcome to the awesome world of web development! This course is designed to teach you the skills you need to create your own cool websites. Let's dive in!
+
+## 🎯 Course Overview
+
+* **Age Group:** 11-15 years old
+* **Session Length:** 1 hour per session
+* **Main Goal:** Build a basic website that you can share with friends and family!
+
 ## 🧙‍♂️ Module 2: Your First Website with GitHub Pages (16 sessions)
 
 Get ready to add a touch of magic to your websites! In this module, we'll learn JavaScript, the coding language that makes websites interactive and fun, and use GitHub Pages to publish them.
@@ -67,3 +77,9 @@ Get ready to add a touch of magic to your websites! In this module, we'll learn 
 16. **Module 2 Challenge!**
     * Show off your JavaScript skills with a final project that demonstrates all you’ve learned.
     * Milestone: Incorporate multiple JavaScript concepts and publish the final project on GitHub Pages.
+   
+## 🚀 Let's Get Started!
+
+Are you excited? We are! Each session will be packed with learning and fun activities to help you become a web developer extraordinaire.
+
+Happy Coding! 💻
