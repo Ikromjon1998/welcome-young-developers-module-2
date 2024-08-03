@@ -1,4 +1,4 @@
-# 🌟 Session 6: Project - Guess the Number Game 🎮
+# 🌟 Session 7: Project - Guess the Number Game 🎮
 
 Welcome back, young coders! Today, we’re diving into a super fun project where you'll create your own "Guess the Number" game using JavaScript. This project will help you practice using loops and conditionals in an interactive way. Ready to create your game? Let’s get started!
 
