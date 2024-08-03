@@ -34,13 +34,13 @@ Get ready to add a touch of magic to your websites! In this module, we'll learn 
     * Learn about `for` loops and `while` loops.
     * Mini-Project: Create a script that counts from 1 to 10 and displays the numbers on the webpage.
 
-6. **Project 5: Guess the Number Game!**
-    * Create a fun game where visitors try to guess a secret number.
-    * Use loops and conditionals to provide feedback to the user (e.g., "Too high!" or "Too low!").
-
-7. **JavaScript Functions: Reusable Magic Spells!**
+6. **JavaScript Functions: Reusable Magic Spells!**
     * Learn how to create reusable code blocks for your website.
     * Mini-Project: Create a function that calculates the area of a rectangle and use it to display results on the webpage.
+
+7. **Project 5: Guess the Number Game!**
+    * Create a fun game where visitors try to guess a secret number.
+    * Use loops and conditionals to provide feedback to the user (e.g., "Too high!" or "Too low!").
 
 8. **JavaScript and Forms: Do More with User Input!**
     * Process information that visitors enter into forms on your website.
