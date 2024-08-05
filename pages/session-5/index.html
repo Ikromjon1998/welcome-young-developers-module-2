@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>🌟 Session 5: JavaScript Loops: Repeat After Me! 🔄</h1>
+</header>
+
+<section class="content">
+    <div class="goals">
+        <h2>🎯 Learning Goals for Today</h2>
+        <ul>
+            <li>Understand what loops are and why they are useful.</li>
+            <li>Learn about <code>for</code> loops and <code>while</code> loops in JavaScript.</li>
+            <li>Create a script that counts from 1 to 10 and displays the numbers on the webpage.</li>
+        </ul>
+    </div>
+
+    <div class="intro">
+        <h2>📖 Introduction to JavaScript Loops</h2>
+        <h3>What are Loops?</h3>
+        <p>Loops are programming constructs that repeat a block of code as long as a specified condition is true. They help reduce redundancy and make code more efficient.</p>
+        <h4>Key Concepts of Loops</h4>
+        <ul>
+            <li><strong>For Loop</strong>: Repeats a block of code a certain number of times.</li>
+            <li><strong>While Loop</strong>: Repeats a block of code as long as a condition is true.</li>
+        </ul>
+    </div>
+
+    <div class="interactive">
+        <h2>🔍 Exploring JavaScript Loops</h2>
+        <div class="diagrams">
+            <h3>For Loop Diagram</h3>
+            <div id="forDiagram" class="diagram"></div>
+            <h3>While Loop Diagram</h3>
+            <div id="whileDiagram" class="diagram"></div>
+        </div>
+
+        <h2>💻 Interactive Coding Activity: Counting from 1 to 10</h2>
+        <div class="activity">
+            <p id="countDisplay"></p>
+            <button onclick="countNumbers()">Count from 1 to 10</button>
+        </div>
+
+        <h3>Interactive Quiz</h3>
+        <div class="quiz">
+            <form id="quizForm">
+                <p>1. What does a <code>for</code> loop do?</p>
+                <label><input type="radio" name="q1" value="a"> a) Repeats a block of code a specific number of times.</label><br>
+                <label><input type="radio" name="q1" value="b"> b) Repeats a block of code as long as a condition is true.</label><br>
+                <label><input type="radio" name="q1" value="c"> c) Runs code only once.</label><br>
+                <p>2. What are the three parts of a <code>for</code> loop?</p>
+                <label><input type="radio" name="q2" value="a"> a) Condition, initialization, and increment/decrement.</label><br>
+                <label><input type="radio" name="q2" value="b"> b) Condition, loop body, and increment/decrement.</label><br>
+                <label><input type="radio" name="q2" value="c"> c) Initialization, condition, and increment/decrement.</label><br>
+                <p>3. What is the key difference between <code>for</code> and <code>while</code> loops?</p>
+                <label><input type="radio" name="q3" value="a"> a) <code>For</code> loops repeat code a specific number of times; <code>while</code> loops repeat code as long as a condition is true.</label><br>
+                <label><input type="radio" name="q3" value="b"> b) <code>While</code> loops repeat code a specific number of times; <code>for</code> loops repeat code as long as a condition is true.</label><br>
+                <label><input type="radio" name="q3" value="c"> c) <code>For</code> loops always run faster than <code>while</code> loops.</label><br>
+                <button type="button" onclick="checkQuiz()">Submit Answers</button>
+            </form>
+            <p id="quizResult"></p>
+        </div>
+
+        <h2>🛠️ Hands-On Project: Number Counting Script</h2>
+        <p>Create a new script that counts numbers in different ways. Check out the examples below:</p>
+        <button onclick="showProjectResults()">Show Project Results</button>
+        <div id="projectResults"></div>
+    </div>
+</section>
+
+<footer>
+    <p>✨ Fun Fact: Did you know that loops are used in almost every programming language? By learning how to use loops, you are mastering a fundamental concept in programming!</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+    document.addEventListener('DOMContentLoaded', () => {
+        mermaid.contentLoaded();
+    });
+</script>
+</body>
+</html>

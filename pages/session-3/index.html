@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Clickable Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>🌟 Clickable Image Gallery! 🖼️</h1>
+</header>
+
+<main>
+  <section class="gallery">
+    <img id="main-image" src="https://via.placeholder.com/600x400?text=Main+Image" alt="Main Image">
+    <div class="thumbnails">
+      <img class="thumbnail" src="https://via.placeholder.com/100x75?text=Thumb+1" alt="Thumbnail 1">
+      <img class="thumbnail" src="https://via.placeholder.com/100x75?text=Thumb+2" alt="Thumbnail 2">
+      <img class="thumbnail" src="https://via.placeholder.com/100x75?text=Thumb+3" alt="Thumbnail 3">
+      <img class="thumbnail" src="https://via.placeholder.com/100x75?text=Thumb+4" alt="Thumbnail 4">
+      <img class="thumbnail" src="https://via.placeholder.com/100x75?text=Thumb+5" alt="Thumbnail 5">
+    </div>
+  </section>
+
+  <section class="quiz">
+    <h2>🎉 Quick Quiz! 🎉</h2>
+    <div class="quiz-question">
+      <p><strong>1. What HTML tag is used to display the main image in the gallery?</strong></p>
+      <button onclick="checkAnswer('a')">a) &lt;img&gt;</button>
+      <button onclick="checkAnswer('b')">b) &lt;div&gt;</button>
+      <button onclick="checkAnswer('c')">c) &lt;span&gt;</button>
+    </div>
+    <div class="quiz-feedback" id="quiz-feedback"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Happy Coding! 🚀</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

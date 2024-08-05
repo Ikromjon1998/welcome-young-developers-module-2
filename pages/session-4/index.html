@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Quiz for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>🌟 Session 4: JavaScript Decisions: If/Else Statements! 🎉</h1>
+</header>
+
+<main>
+    <section id="intro">
+        <h2>🎯 Learning Goals for Today</h2>
+        <ul>
+            <li>Understand what if/else statements are and how they work.</li>
+            <li>Learn how to implement if/else statements in JavaScript.</li>
+            <li>Create a simple quiz that provides feedback based on the user's answers.</li>
+        </ul>
+    </section>
+
+    <section id="quiz-section">
+        <h2>💻 Interactive Coding Activity: Simple Quiz</h2>
+        <p>What is 10 + 5?</p>
+        <input type="text" id="answer" placeholder="Type your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+    </section>
+
+    <section id="personalized-quiz-section">
+        <h2>🛠️ Hands-On Project: Personalized Quiz</h2>
+        <div id="quiz-container">
+            <p>What is 5 + 5?</p>
+            <input type="radio" name="question1" value="10">10<br>
+            <input type="radio" name="question1" value="11">11<br>
+            <input type="radio" name="question1" value="12">12<br>
+
+            <p>What is 10 + 10?</p>
+            <input type="radio" name="question2" value="19">19<br>
+            <input type="radio" name="question2" value="20">20<br>
+            <input type="radio" name="question2" value="21">21<br>
+        </div>
+        <button onclick="submitQuiz()">Submit Quiz</button>
+        <p id="final-feedback"></p>
+    </section>
+
+    <section id="interactive-quiz">
+        <h2>📚 Interactive Quiz</h2>
+        <div class="quiz-question">
+            <p>1. What does an if statement do?</p>
+            <label><input type="radio" name="quiz1" value="a"> a) Always runs the code inside it.</label><br>
+            <label><input type="radio" name="quiz1" value="b"> b) Checks a condition and runs the code if the condition is true.</label><br>
+            <label><input type="radio" name="quiz1" value="c"> c) Always skips the code inside it.</label>
+        </div>
+        <div class="quiz-question">
+            <p>2. What does an else statement do?</p>
+            <label><input type="radio" name="quiz2" value="a"> a) Runs the code if the if statement's condition is true.</label><br>
+            <label><input type="radio" name="quiz2" value="b"> b) Runs the code if the if statement's condition is false.</label><br>
+            <label><input type="radio" name="quiz2" value="c"> c) Always runs the code inside it.</label>
+        </div>
+        <div class="quiz-question">
+            <p>3. Which of the following is a correct if/else statement in JavaScript?</p>
+            <label><input type="radio" name="quiz3" value="a"> a) if x > 10 { console.log("x is greater than 10"); } else { console.log("x is less than or equal to 10"); }</label><br>
+            <label><input type="radio" name="quiz3" value="b"> b) if (x > 10) { console.log("x is greater than 10"); } else { console.log("x is less than or equal to 10"); }</label><br>
+            <label><input type="radio" name="quiz3" value="c"> c) if (x > 10) console.log("x is greater than 10") else console.log("x is less than or equal to 10")</label>
+        </div>
+        <button onclick="checkInteractiveQuiz()">Submit Answers</button>
+        <p id="interactive-feedback"></p>
+    </section>
+</main>
+
+<footer>
+    <p>🚀 Fun Fact! JavaScript was created in just 10 days in May 1995 by Brendan Eich. Now, you’re part of the awesome world of web development!</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
