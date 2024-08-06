@@ -6,161 +6,209 @@
     <title>JavaScript and the DOM: Changing Things on the Fly!</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f8ff;
             color: #333;
-            text-align: center;
             padding: 20px;
         }
+        h1, h2 {
+            color: #0056b3;
+        }
         h1 {
-            color: #ff4500;
-        }
-        h2, h3 {
-            color: #32cd32;
-        }
-        p {
-            font-size: 18px;
-        }
-        button {
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
             text-align: center;
-            text-decoration: none;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .button {
             display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
             font-size: 16px;
-            margin: 10px;
+            color: white;
+            background-color: #0056b3;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            border-radius: 8px;
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #45a049;
+        .button:hover {
+            background-color: #003d7a;
         }
-        #dynamicParagraph {
-            font-size: 20px;
-            margin: 20px 0;
-            padding: 10px;
-            border: 2px solid #32cd32;
-            border-radius: 8px;
-            display: inline-block;
+        .quiz-button {
+            background-color: #28a745;
         }
-        .quiz-container {
-            margin: 20px 0;
-            padding: 10px;
-            border: 2px solid #ff4500;
-            border-radius: 8px;
-            background-color: #fff;
+        .quiz-button:hover {
+            background-color: #1c7430;
         }
-        .quiz-container label {
-            display: block;
-            margin: 5px 0;
+        .quiz-section {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
-        .quiz-container input {
+        .quiz-section input[type="radio"] {
             margin-right: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #28a745;
+            background-color: #dff0d8;
+            display: none;
+        }
+        .project {
+            background-color: #f7f7f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+<div class="content">
+    <h1>🌟 Session 2: JavaScript and the DOM: Changing Things on the Fly! 📝</h1>
 
-<h1>🌟 Session 2: JavaScript and the DOM: Changing Things on the Fly! 📝</h1>
+    <h2>🎯 Learning Goals for Today</h2>
+    <ul>
+        <li>Understand what the DOM is and why it’s important.</li>
+        <li>Learn how to access and manipulate HTML elements using JavaScript.</li>
+        <li>Create a button that changes the text of a paragraph when clicked.</li>
+    </ul>
 
-<p>Welcome back, young coders! Today, we’re going to learn about the Document Object Model (DOM) and how to use JavaScript to change the content of your webpage dynamically. Ready to make your website come alive? Let’s get started!</p>
+    <h2>📖 Introduction to the DOM</h2>
+    <h3>What is the DOM?</h3>
+    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as a tree of nodes, where each node is part of the document.</p>
 
-<h2>🎯 <strong>Learning Goals for Today</strong></h2>
-<ul>
-    <li>Understand what the DOM is and why it’s important.</li>
-    <li>Learn how to access and manipulate HTML elements using JavaScript.</li>
-    <li>Create a button that changes the text of a paragraph when clicked.</li>
-</ul>
+    <h3>Key Concepts of the DOM</h3>
+    <ul>
+        <li><strong>Nodes</strong>: Each element in the HTML document is a node in the DOM tree.</li>
+        <li><strong>Document</strong>: The root node of the DOM tree.</li>
+        <li><strong>Element</strong>: Represents an HTML element and is a type of node.</li>
+        <li><strong>Text Node</strong>: Represents the text inside an HTML element.</li>
+    </ul>
 
-<h3>📖 Introduction to the DOM</h3>
-
-<p><strong>What is the DOM?</strong></p>
-<p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as a tree of nodes, where each node is part of the document.</p>
-
-<h4>Key Concepts of the DOM</h4>
-<ul>
-    <li><strong>Nodes</strong>: Each element in the HTML document is a node in the DOM tree.</li>
-    <li><strong>Document</strong>: The root node of the DOM tree.</li>
-    <li><strong>Element</strong>: Represents an HTML element and is a type of node.</li>
-    <li><strong>Text Node</strong>: Represents the text inside an HTML element.</li>
-</ul>
-
-<h3>🔍 Exploring the DOM</h3>
-
-<h4>1. Accessing Elements</h4>
-<p>You can use JavaScript to select and access elements in the DOM. Common methods include <code>getElementById</code>, <code>getElementsByClassName</code>, and <code>querySelector</code>.</p>
-
-<div id="dom-example">
-    <p id="myParagraph">Hello, world!</p>
-    <button id="changeTextButton">Change Text</button>
-</div>
-
-<h4>2. Changing Element Content</h4>
-<p>You can change the content of HTML elements using properties like <code>textContent</code> and <code>innerHTML</code>.</p>
-
-<div id="content-example">
-    <p id="contentParagraph">This is some text.</p>
-    <button id="changeContentButton">Change Content</button>
-</div>
-
-<h3>💻 Interactive Coding Activity: Dynamic Text Changer</h3>
-
-<h4>1. Set Up Your Coding Environment</h4>
-<p>Open your text editor (Notepad++, Sublime Text, VS Code, etc.).</p>
-<p>Create a new file and save it as <code>index.html</code>.</p>
-
-<h4>2. Write Your JavaScript DOM Manipulation Code</h4>
-<p>Follow these steps to create a button that changes the text of a paragraph when clicked:</p>
-
-<div id="dynamic-example">
-    <p id="textParagraph">Click the button to change this text.</p>
-    <button id="changeTextButton">Change Text</button>
-    <button id="changeColorButton">Change Color</button>
-</div>
-
-<h4>3. Experiment with Your Own Content</h4>
-<p><strong>Challenge</strong>: Create a new button that changes the color of the text when clicked.</p>
-
-<div id="color-example">
-    <p id="colorParagraph">Click the button to change my color.</p>
-    <button id="changeColorButton">Change Color</button>
-</div>
-
-<h3>📚 Interactive Quiz</h3>
-<div class="quiz-container">
-    <p>Let’s test your knowledge with a fun quiz! Answer the following questions to see how much you’ve learned.</p>
-    <form id="quizForm">
-        <p>1. What is the DOM?</p>
-        <label><input type="radio" name="dom" value="a"> a) A programming language</label>
-        <label><input type="radio" name="dom" value="b"> b) A programming interface for web documents</label>
-        <label><input type="radio" name="dom" value="c"> c) A styling method</label>
-
-        <p>2. Which method is used to access an element by its ID?</p>
-        <label><input type="radio" name="access" value="a"> a) <code>getElementById</code></label>
-        <label><input type="radio" name="access" value="b"> b) <code>querySelectorAll</code></label>
-        <label><input type="radio" name="access" value="c"> c) <code>getElementsByClassName</code></label>
-
-        <p>3. How can you change the text content of an HTML element?</p>
-        <label><input type="radio" name="textContent" value="a"> a) Using the <code>innerHTML</code> property</label>
-        <label><input type="radio" name="textContent" value="b"> b) Using the <code>textContent</code> property</label>
-        <label><input type="radio" name="textContent" value="c"> c) Both a and b</label>
-        <br><br>
-        <button type="button" onclick="checkQuiz()">Submit Answers</button>
-    </form>
-    <p id="quizResult"></p>
-</div>
-
-<h3>🛠️ Hands-On Project: Dynamic Webpage</h3>
-<p>In this project, you’ll build a webpage with interactive elements using the skills you’ve learned today.</p>
-
-<h4>Project Steps:</h4>
-<ol>
-    <li>Create a <strong>NEW HTML File</strong>: Name it <code>dynamicPage.html</code>.</li>
-    <li>Add Your Basic HTML Structure:</li>
+    <h2>🔍 Exploring the DOM</h2>
+    <h3>1. Accessing Elements</h3>
+    <p>You can use JavaScript to select and access elements in the DOM. Common methods include <code>getElementById</code>, <code>getElementsByClassName</code>, and <code>querySelector</code>.</p>
     <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="myParagraph"&gt;Hello, world!&lt;/p&gt;
+    &lt;button id="changeTextButton"&gt;Change Text&lt;/button&gt;
+    &lt;script&gt;
+        const paragraph = document.getElementById('myParagraph');
+        const button = document.getElementById('changeTextButton');
+        button.addEventListener('click', function() {
+            paragraph.textContent = 'Text changed!';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>2. Changing Element Content</h3>
+    <p>You can change the content of HTML elements using properties like <code>textContent</code> and <code>innerHTML</code>.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Change Content Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="myParagraph"&gt;This is some text.&lt;/p&gt;
+    &lt;button id="changeContentButton"&gt;Change Content&lt;/button&gt;
+    &lt;script&gt;
+        const paragraph = document.getElementById('myParagraph');
+        const button = document.getElementById('changeContentButton');
+        button.addEventListener('click', function() {
+            paragraph.textContent = 'Content has been changed!';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>💻 Interactive Coding Activity: Dynamic Text Changer</h2>
+
+    <h3>1. Set Up Your Coding Environment</h3>
+    <p>Open your text editor (Notepad++, Sublime Text, VS Code, etc.). Create a new file and save it as <code>index.html</code>.</p>
+
+    <h3>2. Write Your JavaScript DOM Manipulation Code</h3>
+    <p>Follow these steps to create a button that changes the text of a paragraph when clicked:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="textParagraph"&gt;Click the button to change this text.&lt;/p&gt;
+    &lt;button id="changeTextButton"&gt;Change Text&lt;/button&gt;
+    &lt;script&gt;
+        const paragraph = document.getElementById('textParagraph');
+        const button = document.getElementById('changeTextButton');
+        button.addEventListener('click', function() {
+            paragraph.textContent = 'The text has been changed!';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>3. Experiment with Your Own Content</h3>
+    <p><strong>Challenge:</strong> Create a new button that changes the color of the text when clicked.</p>
+    <p><strong>Hint:</strong> Use the <code>style</code> property and change the <code>color</code>.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Change Text Color&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="colorParagraph"&gt;Click the button to change my color.&lt;/p&gt;
+    &lt;button id="changeColorButton"&gt;Change Color&lt;/button&gt;
+    &lt;script&gt;
+        const colorParagraph = document.getElementById('colorParagraph');
+        const colorButton = document.getElementById('changeColorButton');
+        colorButton.addEventListener('click', function() {
+            colorParagraph.style.color = 'blue';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>📚 Interactive Quiz</h2>
+    <div class="quiz-section">
+        <p><strong>Let’s test your knowledge with a fun quiz! Answer the following questions to see how much you’ve learned.</strong></p>
+
+        <form id="quizForm">
+            <p><strong>1. What is the DOM?</strong></p>
+            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">a) A programming language</label><br>
+            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">b) A programming interface for web documents</label><br>
+            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">c) A styling method</label><br>
+
+            <p><strong>2. Which method is used to access an element by its ID?</strong></p>
+            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">a) getElementById</label><br>
+            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">b) querySelectorAll</label><br>
+            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">c) getElementsByClassName</label><br>
+
+            <p><strong>3. How can you change the text content of an HTML element?</strong></p>
+            <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">a) Using the innerHTML property</label><br>
+            <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">b) Using the textContent property</label><br>
+            <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">c) Both a and b</label><br>
+        </form>
+
+        <button class="button quiz-button" onclick="checkQuiz()">Submit Quiz</button>
+
+        <div class="result" id="quizResult"></div>
+    </div>
+
+    <h2>🛠️ Hands-On Project: Dynamic Webpage</h2>
+    <div class="project">
+        <p>In this project, you’ll build a webpage with interactive elements using the skills you’ve learned today.</p>
+
+        <h3>Project Steps:</h3>
+        <p><strong>Create a NEW HTML File:</strong> Name it <code>dynamicPage.html</code>.</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;Dynamic Webpage Project&lt;/title&gt;
@@ -187,56 +235,40 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-    <li>Save and Preview: Open the <code>dynamicPage.html</code> file in your web browser to see your interactive elements in action.</li>
-</ol>
 
-<h3>✨ Wrap-Up and Homework</h3>
-<p>You did an amazing job today! To reinforce what you've learned:</p>
-<ul>
-    <li><strong>Homework</strong>: Create a webpage with a paragraph and three buttons that change the paragraph’s text, color, and background color.</li>
-    <li><strong>Additional Practice</strong>: Explore other DOM properties and methods to add more interactivity to your webpage.</li>
-</ul>
+        <p><strong>Save and Preview:</strong> Open the <code>dynamicPage.html</code> file in your web browser to see your interactive elements in action.</p>
+    </div>
 
-<h3>🚀 Fun Fact!</h3>
-<p>Did you know that the DOM is not specific to HTML? It can also be used with XML documents. The DOM is a powerful way to make your web pages dynamic and interactive! Now, you’re part of the awesome world of web development!</p>
+    <h2>✨ Wrap-Up and Homework</h2>
+    <p>You did an amazing job today! To reinforce what you've learned:</p>
+    <ul>
+        <li><strong>Homework:</strong> Create a webpage with a paragraph and three buttons that change the paragraph’s text, color, and background color.</li>
+        <li><strong>Additional Practice:</strong> Explore other DOM properties and methods to add more interactivity to your webpage.</li>
+    </ul>
+
+    <h2>🚀 Fun Fact!</h2>
+    <p>Did you know that the DOM is not specific to HTML? It can also be used with XML documents. The DOM is a powerful way to make your web pages dynamic and interactive! Now, you’re part of the awesome world of web development!</p>
+</div>
 
 <script>
-    // Dynamic Text Changer
-    document.getElementById('changeTextButton').addEventListener('click', function() {
-        document.getElementById('textParagraph').textContent = 'The text has been changed!';
-    });
-    document.getElementById('changeColorButton').addEventListener('click', function() {
-        document.getElementById('colorParagraph').style.color = 'blue';
-    });
-
-    // Quiz Function
     function checkQuiz() {
-        const domAnswer = document.querySelector('input[name="dom"]:checked');
-        const accessAnswer = document.querySelector('input[name="access"]:checked');
-        const textContentAnswer = document.querySelector('input[name="textContent"]:checked');
-        let result = '';
+        const result = document.getElementById('quizResult');
+        const form = document.getElementById('quizForm');
+        let score = 0;
 
-        if (domAnswer && domAnswer.value === 'b') {
-            result += '1. Correct! The DOM is a programming interface for web documents.<br>';
+        if (form.q1.value === "b") score++;
+        if (form.q2.value === "a") score++;
+        if (form.q3.value === "c") score++;
+
+        result.style.display = 'block';
+        result.textContent = `You scored ${score} out of 3.`;
+
+        if (score === 3) {
+            result.textContent += " Great job!";
         } else {
-            result += '1. Incorrect. The DOM is a programming interface for web documents.<br>';
+            result.textContent += " Keep practicing!";
         }
-
-        if (accessAnswer && accessAnswer.value === 'a') {
-            result += '2. Correct! The method used to access an element by its ID is <code>getElementById</code>.<br>';
-        } else {
-            result += '2. Incorrect. The method used to access an element by its ID is <code>getElementById</code>.<br>';
-        }
-
-        if (textContentAnswer && textContentAnswer.value === 'c') {
-            result += '3. Correct! You can change the text content of an HTML element using both <code>innerHTML</code> and <code>textContent</code>.<br>';
-        } else {
-            result += '3. Incorrect. You can change the text content of an HTML element using both <code>innerHTML</code> and <code>textContent</code>.<br>';
-        }
-
-        document.getElementById('quizResult').innerHTML = result;
     }
 </script>
-
 </body>
 </html>

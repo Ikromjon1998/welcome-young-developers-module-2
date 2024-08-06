@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #48cae4;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #e0f7fa;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        #animateButton, #movingButton {
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            font-size: 16px;
+            border: none;
+            position: relative;
+            margin: 10px 0;
+        }
+        #animateButton:hover, #movingButton:hover {
+            cursor: pointer;
+            background-color: #0096c7;
+        }
+        .quiz {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .quiz h2 {
+            margin-top: 0;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+        .quiz-question p {
+            margin: 5px 0;
+        }
+        .quiz-question label {
+            margin-right: 10px;
+        }
+        .quiz-result {
+            display: none;
+            font-weight: bold;
+        }
+        .example, .interactive {
+            margin: 10px 0;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            #animateButton, #movingButton {
+                width: 80px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>🌟 JavaScript Animations: Make Things Move! 🎉</h1>
+</header>
+<main>
+    <section>
+        <h2>🎯 Learning Goals for Today</h2>
+        <ul>
+            <li>Understand what animations are and why they are used in web development.</li>
+            <li>Learn how to create simple animations using CSS and JavaScript.</li>
+            <li>Animate a button to change size or move across the screen when clicked.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>📖 Introduction to JavaScript Animations</h2>
+        <p>An animation is a way of creating the illusion of movement by rapidly changing the display of a sequence of images. In web development, animations make websites more dynamic and engaging by adding visual effects.</p>
+        <ul>
+            <li>CSS Animations: Animations created using CSS properties.</li>
+            <li>JavaScript Animations: Animations created using JavaScript to manipulate CSS properties or the DOM.</li>
+            <li>RequestAnimationFrame: A method in JavaScript for creating smooth animations.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>🔍 Exploring Animations</h2>
+        <h3>1. CSS Animations</h3>
+        <p>CSS animations allow you to animate HTML elements without JavaScript by using the <code>@keyframes</code> rule.</p>
+        <pre><code>@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}</code></pre>
+        <div class="example">
+            <h4>Try It Out:</h4>
+            <div class="element" style="width:100px; height:100px; background-color:red; animation-name:example; animation-duration:4s;"></div>
+        </div>
+        <h3>2. JavaScript Animations with setInterval</h3>
+        <p>You can use JavaScript's <code>setInterval</code> function to create animations by repeatedly changing the properties of an element over time.</p>
+        <pre><code>function moveElement() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 10);
+
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
+  }
+}</code></pre>
+        <div class="example">
+            <h4>Try It Out:</h4>
+            <button id="animateButton" onclick="animateButton()">Click Me!</button>
+            <script>
+                function animateButton() {
+                    var button = document.getElementById("animateButton");
+                    var size = 100;
+                    var id = setInterval(frame, 10);
+
+                    function frame() {
+                        if (size == 200) {
+                            clearInterval(id);
+                        } else {
+                            size++;
+                            button.style.width = size + "px";
+                            button.style.height = (size / 2) + "px";
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <h3>3. JavaScript Animations with requestAnimationFrame</h3>
+        <p>The <code>requestAnimationFrame</code> method provides a more efficient way to create smooth animations.</p>
+        <pre><code>function moveElement() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+
+  function frame() {
+    if (pos < 350) {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}</code></pre>
+        <div class="example">
+            <h4>Try It Out:</h4>
+            <button id="movingButton" onclick="moveButton()">Click Me!</button>
+            <script>
+                function moveButton() {
+                    var button = document.getElementById("movingButton");
+                    var pos = 0;
+
+                    function frame() {
+                        if (pos < 300) {
+                            pos++;
+                            button.style.left = pos + "px";
+                            requestAnimationFrame(frame);
+                        }
+                    }
+
+                    requestAnimationFrame(frame);
+                }
+            </script>
+        </div>
+    </section>
+    <section>
+        <h2>📚 Interactive Quiz</h2>
+        <div class="quiz">
+            <h2>Interactive Quiz</h2>
+            <div class="quiz-question">
+                <p>1. What is the purpose of the <code>@keyframes</code> rule in CSS?</p>
+                <label><input type="radio" name="q1" value="a"> a) To define the animation sequence.</label>
+                <label><input type="radio" name="q1" value="b"> b) To apply styles to an element.</label>
+                <label><input type="radio" name="q1" value="c"> c) To create a new HTML element.</label>
+            </div>
+            <div class="quiz-question">
+                <p>2. Which JavaScript method is best for creating smooth animations?</p>
+                <label><input type="radio" name="q2" value="a"> a) setInterval</label>
+                <label><input type="radio" name="q2" value="b"> b) requestAnimationFrame</label>
+                <label><input type="radio" name="q2" value="c"> c) setTimeout</label>
+            </div>
+            <div class="quiz-question">
+                <p>3. What does the <code>animation-duration</code> property do in CSS?</p>
+                <label><input type="radio" name="q3" value="a"> a) Sets the delay before the animation starts.</label>
+                <label><input type="radio" name="q3" value="b"> b) Sets the number of times the animation repeats.</label>
+                <label><input type="radio" name="q3" value="c"> c) Sets the length of time an animation takes to complete.</label>
+            </div>
+            <button id="submitQuiz">Submit Quiz</button>
+            <p id="quizResult" class="quiz-result"></p>
+        </div>
+    </section>
+    <section>
+        <h2>🛠️ Hands-On Project: Moving Button</h2>
+        <p>In this project, you’ll create an animation that moves a button across the screen when clicked.</p>
+        <h3>Project Steps:</h3>
+        <ol>
+            <li>Create a NEW HTML File: Name it <code>movingButton.html</code>.</li>
+            <li>Add Your Basic HTML Structure:</li>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Moving Button&lt;/title&gt;
+  &lt;style&gt;
+    #movingButton {
+      width: 100px;
+      height: 50px;
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      border: none;
+      position: absolute;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;button id="movingButton" onclick="moveButton()"&gt;Click Me!&lt;/button&gt;
+
+  &lt;script&gt;
+    function moveButton() {
+      var button = document.getElementById("movingButton");
+      var pos = 0;
+
+      function frame() {
+        if (pos < 300) {
+          pos++;
+          button.style.left = pos + "px";
+          requestAnimationFrame(frame);
+        }
+      }
+
+      requestAnimationFrame(frame);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <li>Customize Your Content: Add some CSS to make your button look nicer and adjust the animation as needed.</li>
+            <li>Save and Preview: Save your file and open it in a web browser to test the moving button animation.</li>
+        </ol>
+    </section>
+    <section>
+        <h2>✨ Wrap-Up and Homework</h2>
+        <p>You did an amazing job today! To reinforce what you've learned:</p>
+        <ul>
+            <li>Homework: Create an animation that changes the color of a div when clicked.</li>
+            <li>Additional Practice: Try creating a more complex animation using <code>requestAnimationFrame</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>🚀 Fun Fact!</h2>
+        <p>Did you know that the first ever animated movie was created in 1908 by French artist Émile Cohl? It was called "Fantasmagorie" and it was made using simple line drawings. Now, you’re part of the awesome world of web development animations!</p>
+    </section>
+</main>
+<script>
+    document.getElementById("submitQuiz").addEventListener("click", function() {
+        var correctAnswers = ['a', 'b', 'c'];
+        var userAnswers = [
+            document.querySelector('input[name="q1"]:checked') ? document.querySelector('input[name="q1"]:checked').value : null,
+            document.querySelector('input[name="q2"]:checked') ? document.querySelector('input[name="q2"]:checked').value : null,
+            document.querySelector('input[name="q3"]:checked') ? document.querySelector('input[name="q3"]:checked').value : null
+        ];
+
+        var score = userAnswers.reduce(function(score, answer, index) {
+            return score + (answer === correctAnswers[index] ? 1 : 0);
+        }, 0);
+
+        var resultMessage = "You got " + score + " out of 3 correct!";
+        document.getElementById("quizResult").innerText = resultMessage;
+        document.getElementById("quizResult").style.display = "block";
+    });
+</script>
+</body>
+</html>

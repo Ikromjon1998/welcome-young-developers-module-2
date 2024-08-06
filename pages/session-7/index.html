@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Loops: The Magical Repeaters!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #ff4500;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .quiz {
+      margin-top: 20px;
+    }
+    .quiz input {
+      margin-right: 10px;
+    }
+    .quiz button {
+      display: block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff4500;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .quiz button:hover {
+      background-color: #ff6347;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .activity, .challenge {
+      margin-top: 20px;
+    }
+    .activity label {
+      display: block;
+      margin-top: 10px;
+    }
+    .activity input {
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .activity button, .challenge button {
+      display: block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #32cd32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .activity button:hover, .challenge button:hover {
+      background-color: #3cb371;
+    }
+    .fun-fact {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #ffebcd;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🌟 Session 7: JavaScript Loops: The Magical Repeaters! 🔄</h1>
+  <p>Welcome back, young coders! Today, we’re going to learn about JavaScript loops, which are like magical repeaters that allow you to perform a task multiple times without writing repetitive code. Ready to cast some looping spells? Let’s get started!</p>
+
+  <h2>🎯 Learning Goals for Today</h2>
+  <ul>
+    <li>Understand what loops are and why they are useful.</li>
+    <li>Learn about different types of loops in JavaScript.</li>
+    <li>Use loops to perform repetitive tasks efficiently.</li>
+  </ul>
+
+  <h2>📖 Introduction to JavaScript Loops</h2>
+
+  <h3>What is a Loop?</h3>
+  <p>A loop is a programming construct that allows you to repeat a block of code multiple times. Loops help you perform repetitive tasks efficiently and make your code more concise.</p>
+
+  <h3>Types of Loops in JavaScript</h3>
+  <ul>
+    <li><strong>For Loop</strong>: Repeats a block of code a specific number of times.</li>
+    <li><strong>While Loop</strong>: Repeats a block of code as long as a condition is true.</li>
+    <li><strong>Do-While Loop</strong>: Similar to the while loop, but guarantees the code block runs at least once.</li>
+  </ul>
+
+  <h2>🔍 Exploring Loops</h2>
+
+  <h3>1. For Loop</h3>
+  <p>The for loop repeats a block of code a specific number of times. It's useful when you know how many times you need to repeat the task.</p>
+  <pre><code>for (let i = 0; i < 5; i++) {
+  console.log("This is iteration number " + i);
+}</code></pre>
+
+  <h3>2. While Loop</h3>
+  <p>The while loop repeats a block of code as long as a specified condition is true. It's useful when you don't know how many times you need to repeat the task.</p>
+  <pre><code>let i = 0;
+while (i < 5) {
+  console.log("This is iteration number " + i);
+  i++;
+}</code></pre>
+
+  <h3>3. Do-While Loop</h3>
+  <p>The do-while loop is similar to the while loop, but it guarantees that the code block runs at least once, regardless of the condition.</p>
+  <pre><code>let i = 0;
+do {
+  console.log("This is iteration number " + i);
+  i++;
+} while (i < 5);</code></pre>
+
+  <h2>💻 Interactive Coding Activity: Counting with Loops</h2>
+
+  <div class="activity">
+    <h3>1. Set Up Your Coding Environment</h3>
+    <ol>
+      <li>Open your favorite code editor.</li>
+      <li>Create a new HTML file and name it <code>loops.html</code>.</li>
+    </ol>
+
+    <h3>2. Write Your JavaScript Code</h3>
+    <p>Follow these steps to create a function that uses a loop to count from 1 to a number entered by the user:</p>
+
+    <h4>Step 1: Create the HTML structure</h4>
+    <p><label for="countTo">Count to:</label>
+      <input type="number" id="countTo" placeholder="Enter a number"></p>
+    <button onclick="countWithLoop()">Start Counting</button>
+    <p id="countResult"></p>
+
+    <script>
+      function countWithLoop() {
+        const countTo = document.getElementById("countTo").value;
+        let result = "";
+        for (let i = 1; i <= countTo; i++) {
+          result += "Count: " + i + "<br>";
+        }
+        document.getElementById("countResult").innerHTML = result;
+      }
+    </script>
+  </div>
+
+  <h2>📚 Interactive Quiz</h2>
+  <div class="quiz">
+    <p><strong>1. What is a loop in JavaScript?</strong></p>
+    <input type="radio" id="q1a" name="q1" value="a">
+    <label for="q1a">a) A variable that stores multiple values.</label><br>
+    <input type="radio" id="q1b" name="q1" value="b">
+    <label for="q1b">b) A way to repeat a block of code multiple times.</label><br>
+    <input type="radio" id="q1c" name="q1" value="c">
+    <label for="q1c">c) A conditional statement.</label>
+
+    <p><strong>2. Which loop guarantees the code block runs at least once?</strong></p>
+    <input type="radio" id="q2a" name="q2" value="a">
+    <label for="q2a">a) For loop</label><br>
+    <input type="radio" id="q2b" name="q2" value="b">
+    <label for="q2b">b) While loop</label><br>
+    <input type="radio" id="q2c" name="q2" value="c">
+    <label for="q2c">c) Do-while loop</label>
+
+    <p><strong>3. How do you write a for loop that repeats 5 times?</strong></p>
+    <input type="radio" id="q3a" name="q3" value="a">
+    <label for="q3a">a) <code>for (let i = 0; i <= 5; i++)</code></label><br>
+    <input type="radio" id="q3b" name="q3" value="b">
+    <label for="q3b">b) <code>for (let i = 0; i < 5; i++)</code></label><br>
+    <input type="radio" id="q3c" name="q3" value="c">
+    <label for="q3c">c) <code>for (let i = 1; i <= 5; i++)</code></label><br>
+
+    <button onclick="checkLoopQuizAnswers()">Submit Answers</button>
+    <p class="result" id="quizResultLoop"></p>
+  </div>
+
+  <script>
+    function checkLoopQuizAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+
+      let score = 0;
+
+      if (q1 && q1.value === 'b') score++;
+      if (q2 && q2.value === 'c') score++;
+      if (q3 && q3.value === 'b') score++;
+
+      const result = document.getElementById("quizResultLoop");
+      result.innerText = `You scored ${score} out of 3!`;
+    }
+  </script>
+
+  <h2>🛠️ Hands-On Project: Looping through Arrays</h2>
+  <div class="challenge">
+    <p>In this project, you’ll build a simple program that loops through an array of names and displays them.</p>
+
+    <h3>1. Create a NEW HTML File</h3>
+    <p>Name it <code>array_loops.html</code>.</p>
+
+    <h3>2. Add Your Basic HTML Structure</h3>
+    <p><label for="names">Enter names separated by commas:</label>
+      <input type="text" id="names" placeholder="e.g., Alice,Bob,Charlie"></p>
+    <button onclick="displayNames()">Display Names</button>
+    <p id="nameList"></p>
+
+    <script>
+      function displayNames() {
+        const names = document.getElementById("names").value.split(",");
+        let result = "";
+        for (let i = 0; i < names.length; i++) {
+          result += "Name: " + names[i].trim() + "<br>";
+        }
+        document.getElementById("nameList").innerHTML = result;
+      }
+    </script>
+  </div>
+
+  <h2>✨ Wrap-Up and Homework</h2>
+  <p>You did an amazing job today! To reinforce what you've learned:</p>
+  <ul>
+    <li><strong>Homework:</strong> Create a program that uses a loop to calculate the factorial of a number entered by the user.</li>
+    <li><strong>Additional Practice:</strong> Try to use different types of loops (for, while, do-while) in your program.</li>
+  </ul>
+
+  <h2>🚀 Fun Fact!</h2>
+  <div class="fun-fact">
+    <p>Did you know that JavaScript's first name was Mocha? It was later renamed to LiveScript, and finally to JavaScript! Amazing, right?</p>
+  </div>
+</div>
+
+</body>
+</html>

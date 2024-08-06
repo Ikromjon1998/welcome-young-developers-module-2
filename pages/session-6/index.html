@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions: Reusable Magic Spells!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #ff4500;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz input {
+            margin-right: 10px;
+        }
+        .quiz button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background-color: #ff6347;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .calculator {
+            margin-top: 20px;
+        }
+        .calculator label {
+            display: block;
+            margin-top: 10px;
+        }
+        .calculator input {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .calculator button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #32cd32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #3cb371;
+        }
+        .fun-fact {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffebcd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌟 Session 6: JavaScript Functions: Reusable Magic Spells! 🧙‍♂️</h1>
+    <p>Welcome back, young coders! Today, we’re going to learn about JavaScript functions, which are like magical spells that you can reuse in your code. Ready to create some magic on your websites? Let’s get started!</p>
+
+    <h2>🎯 Learning Goals for Today</h2>
+    <ul>
+        <li>Understand what functions are and why they are useful.</li>
+        <li>Learn how to create and call functions in JavaScript.</li>
+        <li>Use functions to perform calculations and display results on your webpage.</li>
+    </ul>
+
+    <h2>📖 Introduction to JavaScript Functions</h2>
+
+    <h3>What is a Function?</h3>
+    <p>A function is a block of code that performs a specific task. You can think of it as a reusable piece of code that you can call whenever you need it. Functions help make your code more organized and easier to read.</p>
+
+    <h3>Key Concepts of Functions</h3>
+    <ul>
+        <li><strong>Function Declaration</strong>: This is how you create a function.</li>
+        <li><strong>Function Call</strong>: This is how you use or "call" a function.</li>
+        <li><strong>Parameters and Arguments</strong>: These are values you can pass into a function to customize its behavior.</li>
+    </ul>
+
+    <h2>🔍 Exploring Functions</h2>
+
+    <h3>1. Function Declaration</h3>
+    <p>To declare a function, you use the <code>function</code> keyword, followed by the function name and a pair of parentheses <code>()</code>. Inside the parentheses, you can specify parameters.</p>
+    <pre><code>function sayHello() {
+  alert("Hello, world!");
+}</code></pre>
+
+    <h3>2. Function Call</h3>
+    <p>To call a function, you simply use the function name followed by parentheses. If the function takes parameters, you pass the arguments inside the parentheses.</p>
+    <pre><code>sayHello(); // This will display an alert with the message "Hello, world!"</code></pre>
+
+    <h3>3. Parameters and Arguments</h3>
+    <p>Parameters are like placeholders that you define in the function declaration. Arguments are the actual values you pass to the function when you call it.</p>
+    <pre><code>function greet(name) {
+  alert("Hello, " + name + "!");
+}
+
+greet("Alice"); // This will display an alert with the message "Hello, Alice!"</code></pre>
+
+    <h2>💻 Interactive Coding Activity: Calculate Area of a Rectangle</h2>
+
+    <div class="calculator">
+        <h3>1. Set Up Your Coding Environment</h3>
+        <ol>
+            <li>Open your favorite code editor.</li>
+            <li>Create a new HTML file and name it <code>rectangle.html</code>.</li>
+        </ol>
+
+        <h3>2. Write Your JavaScript Code</h3>
+        <p>Follow these steps to create a function that calculates the area of a rectangle and displays the result:</p>
+
+        <h4>Step 1: Declare the function</h4>
+        <pre><code>function calculateArea(length, width) {
+  return length * width;
+}</code></pre>
+
+        <h4>Step 2: Create the HTML structure</h4>
+        <p><label for="length">Length:</label>
+            <input type="number" id="length" placeholder="Enter length"></p>
+        <p><label for="width">Width:</label>
+            <input type="number" id="width" placeholder="Enter width"></p>
+        <button onclick="showArea()">Calculate Area</button>
+        <p id="result"></p>
+
+        <script>
+            function calculateArea(length, width) {
+                return length * width;
+            }
+
+            function showArea() {
+                const length = document.getElementById("length").value;
+                const width = document.getElementById("width").value;
+                const area = calculateArea(length, width);
+                document.getElementById("result").innerText = "The area is: " + area;
+            }
+        </script>
+    </div>
+
+    <h2>📚 Interactive Quiz</h2>
+    <div class="quiz">
+        <p><strong>1. What is a function in JavaScript?</strong></p>
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">a) A piece of code that runs in the background.</label><br>
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">b) A reusable block of code that performs a specific task.</label><br>
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">c) A variable that stores a number.</label>
+
+        <p><strong>2. How do you call a function named <code>myFunction</code>?</strong></p>
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">a) <code>myFunction;</code></label><br>
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">b) <code>call myFunction();</code></label><br>
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">c) <code>myFunction();</code></label>
+
+        <p><strong>3. What do you call the values you pass into a function?</strong></p>
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">a) Parameters</label><br>
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">b) Arguments</label><br>
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">c) Variables</label><br>
+
+        <button onclick="checkAnswers()">Submit Answers</button>
+        <p class="result" id="quizResult"></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            let score = 0;
+
+            if (q1 && q1.value === 'b') score++;
+            if (q2 && q2.value === 'c') score++;
+            if (q3 && q3.value === 'b') score++;
+
+            const result = document.getElementById("quizResult");
+            result.innerText = `You scored ${score} out of 3!`;
+        }
+    </script>
+
+    <h2>🛠️ Hands-On Project: Enhanced Rectangle Calculator</h2>
+    <div class="calculator">
+        <h3>1. Create a NEW HTML File</h3>
+        <p>Name it <code>enhanced_rectangle.html</code>.</p>
+
+        <h3>2. Add Your Basic HTML Structure</h3>
+        <p><label for="lengthEnhanced">Length:</label>
+            <input type="number" id="lengthEnhanced" placeholder="Enter length"></p>
+        <p><label for="widthEnhanced">Width:</label>
+            <input type="number" id="widthEnhanced" placeholder="Enter width"></p>
+        <button onclick="showEnhancedResults()">Calculate</button>
+        <p id="areaResultEnhanced"></p>
+        <p id="perimeterResultEnhanced"></p>
+
+        <script>
+            function calculatePerimeter(length, width) {
+                return 2 * (length + width);
+            }
+
+            function showEnhancedResults() {
+                const length = document.getElementById("lengthEnhanced").value;
+                const width = document.getElementById("widthEnhanced").value;
+                const area = calculateArea(length, width);
+                const perimeter = calculatePerimeter(length, width);
+                document.getElementById("areaResultEnhanced").innerText = "The area is: " + area;
+                document.getElementById("perimeterResultEnhanced").innerText = "The perimeter is: " + perimeter;
+            }
+        </script>
+    </div>
+
+    <h2>✨ Wrap-Up and Homework</h2>
+    <p>You did an amazing job today! To reinforce what you've learned:</p>
+    <ul>
+        <li><strong>Homework:</strong> Create a similar calculator for a different shape, like a triangle or circle.</li>
+        <li><strong>Additional Practice:</strong> Try to add validation to your calculator to ensure the input values are positive numbers.</li>
+    </ul>
+
+    <h2>🚀 Fun Fact!</h2>
+    <div class="fun-fact">
+        <p>Did you know that JavaScript was created in just 10 days in May 1995 by Brendan Eich while he was working at Netscape Communications Corporation? Now, you’re part of the awesome world of web development!</p>
+    </div>
+</div>
+
+</body>
+</html>

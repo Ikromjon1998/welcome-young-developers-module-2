@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #48cae4;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #48cae4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0096c7;
+        }
+        #thankYouMessage {
+            color: green;
+            font-weight: bold;
+        }
+        .quiz {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .quiz h2 {
+            margin-top: 0;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+        .quiz-question p {
+            margin: 5px 0;
+        }
+        .quiz-question label {
+            margin-right: 10px;
+        }
+        .quiz-result {
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>🌟 JavaScript and Forms: Do More with User Input! 📝</h1>
+</header>
+<main>
+    <section>
+        <h2>🎯 Learning Goals for Today</h2>
+        <ul>
+            <li>Understand how to create and style HTML forms.</li>
+            <li>Learn how to use JavaScript to get data from forms.</li>
+            <li>Display a thank-you message after form submission.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>📖 Introduction to Forms in JavaScript</h2>
+        <p>A form is an HTML element that allows users to enter and submit data. Forms are essential for collecting user input, such as text, selections, and more, which can be processed using JavaScript.</p>
+        <ul>
+            <li>Form Elements: Various input types like text fields, radio buttons, checkboxes, etc.</li>
+            <li>Form Submission: The process of sending form data to be processed.</li>
+            <li>Form Validation: Ensuring the form data is correct before submission.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>🔍 Exploring Forms</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <input type="submit" value="Submit">
+        </form>
+        <p id="thankYouMessage"></p>
+    </section>
+    <section class="quiz">
+        <h2>📚 Interactive Quiz</h2>
+        <div class="quiz-question">
+            <p>1. What element is used to create a form in HTML?</p>
+            <label><input type="radio" name="q1" value="a"> a) &lt;form&gt;</label>
+            <label><input type="radio" name="q1" value="b"> b) &lt;input&gt;</label>
+            <label><input type="radio" name="q1" value="c"> c) &lt;div&gt;</label>
+        </div>
+        <div class="quiz-question">
+            <p>2. Which attribute is used to specify the input type for an email field?</p>
+            <label><input type="radio" name="q2" value="a"> a) type="text"</label>
+            <label><input type="radio" name="q2" value="b"> b) type="email"</label>
+            <label><input type="radio" name="q2" value="c"> c) type="password"</label>
+        </div>
+        <div class="quiz-question">
+            <p>3. What does <code>event.preventDefault()</code> do in JavaScript?</p>
+            <label><input type="radio" name="q3" value="a"> a) Submits the form.</label>
+            <label><input type="radio" name="q3" value="b"> b) Prevents the default form submission behavior.</label>
+            <label><input type="radio" name="q3" value="c"> c) Clears the form fields.</label>
+        </div>
+        <button id="submitQuiz">Submit Quiz</button>
+        <p id="quizResult" class="quiz-result"></p>
+    </section>
+</main>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        document.getElementById("thankYouMessage").innerText = "Thank you, " + name + "! We have received your email: " + email;
+    });
+
+    document.getElementById("submitQuiz").addEventListener("click", function() {
+        var correctAnswers = ['a', 'b', 'b'];
+        var userAnswers = [
+            document.querySelector('input[name="q1"]:checked').value,
+            document.querySelector('input[name="q2"]:checked').value,
+            document.querySelector('input[name="q3"]:checked').value
+        ];
+
+        var score = userAnswers.reduce(function(score, answer, index) {
+            return score + (answer === correctAnswers[index] ? 1 : 0);
+        }, 0);
+
+        var resultMessage = "You got " + score + " out of 3 correct!";
+        document.getElementById("quizResult").innerText = resultMessage;
+        document.getElementById("quizResult").style.display = "block";
+    });
+</script>
+</body>
+</html>
